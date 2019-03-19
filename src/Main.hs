@@ -1,3 +1,4 @@
+{-# Language ScopedTypeVariables #-}
 module Main where
 
 main :: IO ()
