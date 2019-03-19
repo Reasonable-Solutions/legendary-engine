@@ -33,5 +33,8 @@ data Prism a b s t =
 -- A prism over maybe
 the :: Prism a b (Maybe a) (Maybe b)
 the = Prism match build where
-  match = undefined
-  build = undefined
+  match :: Maybe a -> Either (Maybe b) a
+  match (Just x) = Right x
+  match (Nothing) = Left Nothing
+  build :: b -> Maybe b
+  build = Just 
